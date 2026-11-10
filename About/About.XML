@@ -4,7 +4,7 @@
 	<name>FM - Material / Node Research Patch</name>
 
 	<author>Idol Of Magic</author>
-    
+
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -17,5 +17,6 @@
 
 	<loadAfter>
 		<li>Aoba.Fortress.Medieval.Material</li>
+        <li>Ludeon.RimWorld</li>
 	</loadAfter>
 </ModMetaData>
