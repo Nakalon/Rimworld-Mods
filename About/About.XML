@@ -2,15 +2,20 @@
 
 <ModMetaData>
 	<name>FM - Material / Node Research Patch</name>
+
 	<author>Idol Of Magic</author>
+    
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-        <packageId>Idol.FMM.Node.Research.Patch</packageId>
-	<description>This is a compatibility patch for Fortifications - Medieval - Material and Node Research. Switching Stonecrushing from Medieval to Neolithic.
-		</description>
-</ModMetaData>
 
-<loadAfter>
-    <li>Aoba.Fortress.Medieval.Material</li>
-</loadAfter>
+    <packageId>Idol.FMM.Node.Research.Patch</packageId>
+	
+	<description>
+	This is a compatibility patch for Fortifications - Medieval - Material and Node Research. Switching Stonecrushing from Medieval to Neolithic.
+	</description>
+
+	<loadAfter>
+		<li>Aoba.Fortress.Medieval.Material</li>
+	</loadAfter>
+</ModMetaData>
