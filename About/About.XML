@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-	<name>FM - Material / Node Research Patch</name>
+	<name>Foundations - Medieval - Material / Progression: Production Patch</name>
 
 	<author>Idol Of Magic</author>
 
@@ -11,8 +11,11 @@
 
 	<packageId>Idol.FMM.Node.Research.Patch</packageId>
 	
-	<description>
-	This is a compatibility patch for Fortifications - Medieval - Material and Node Research. Switching Stonecrushing from Medieval to Neolithic.
+	<description>Compatibility patch for Fortifications - Medieval - Material and Progression: Production.
+
+Switches Stonecrushing from Medieval to Neolithic so that Stonecutting is no longer blocked.
+
+It can be used on its own with just FM - Material if you're into that sort of thing!?
 	</description>
 
 	<loadAfter>
