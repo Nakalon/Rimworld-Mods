@@ -9,14 +9,14 @@
 		<li>1.6</li>
 	</supportedVersions>
 
-    <packageId>Idol.FMM.Node.Research.Patch</packageId>
+	<packageId>Idol.FMM.Node.Research.Patch</packageId>
 	
 	<description>
 	This is a compatibility patch for Fortifications - Medieval - Material and Node Research. Switching Stonecrushing from Medieval to Neolithic.
 	</description>
 
 	<loadAfter>
+		<li>Ludeon.RimWorld</li>
 		<li>Aoba.Fortress.Medieval.Material</li>
-        <li>Ludeon.RimWorld</li>
 	</loadAfter>
 </ModMetaData>

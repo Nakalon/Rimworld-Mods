@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ResearchProjectDef[defName="FT_Stonecrushing"]/techLevel</xpath>
-    <value>
-      <techLevel>Neolithic</techLevel>
-    </value>
-  </Operation>
+	<Operation Class="PatchOperationReplace">
+	<xpath>Defs/ResearchProjectDef[defName="FT_Stonecrushing"]/techLevel</xpath>
+	<value>
+		<techLevel>Neolithic</techLevel>
+	</value>
+	</Operation>
 </Patch>
