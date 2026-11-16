@@ -9,6 +9,8 @@
 		</value>
 	</Operation>
 
+<!-- Gathering Spot ===========================================================================================-->
+
 <!-- Bug Fix: Collecting Spot-->
 
 	<Operation Class="PatchOperationRemove">
@@ -23,6 +25,43 @@
 			<workAmount>250</workAmount>
 		</value>
 	</Operation>
+
+<!-- Tweak: Work Speed Stat: General labor to Mining -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[@Name="FT_GatherStonesBase"]/workSpeedStat</xpath>
+		<value>
+			<workSpeedStat>MiningSpeed</workSpeedStat>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[@Name="FT_GatherStonesBase"]/workSkill</xpath>
+		<value>
+			<workSkill>Mining</workSkill>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[@Name="FT_GatherStonesBase"]</xpath>
+		<value>
+			<workSkillLearnFactor>0.5</workSkillLearnFactor>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="FT_DoGatherWork"]/workType</xpath>
+		<value>
+			<workType>Mining</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="FT_DoGatherWork"]/verb</xpath>
+		<value>
+			<verb>dig</verb>
+		</value>
+	</Operation>
+
 
 <!-- Tweak: Collecting Spot: Removing "Gather Any Pebbles". Turning "Cobblestone" into Unobtanium -->
 	<Operation Class="PatchOperationRemove">
@@ -73,6 +112,8 @@
 			<WorkToBuild>1.0</WorkToBuild>
 		</value>
 	</Operation>
+
+<!-- Pebbles ============================================================================================================-->
 
 <!-- Sandstone: Quick, Brittle. -->
 	<Operation Class="PatchOperationReplace">
