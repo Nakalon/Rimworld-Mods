@@ -1,10 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Bug Fix: for Progression: Production-->
 <Patch>
 	<Operation Class="PatchOperationReplace">
-	<xpath>Defs/ResearchProjectDef[defName="FT_Stonecrushing"]/techLevel</xpath>
-	<value>
-		<techLevel>Neolithic</techLevel>
-	</value>
+		<xpath>Defs/ResearchProjectDef[defName="FT_Stonecrushing"]/techLevel</xpath>
+		<value>
+			<techLevel>Neolithic</techLevel>
+		</value>
 	</Operation>
+
+<!-- Bug Fix: Collecting Spot-->
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="FT_GatheringSpot"]/comps/li[compClass="CompReportWorkSpeed"]</xpath>
+	</Operation>
+
+<!-- Balance: Collecting Spot: Pebble Work Speed -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[@Name="FT_GatherStonesBase"]/workAmount</xpath>
+		<value>
+			<workAmount>250</workAmount>
+		</value>
+	</Operation>
+
+<!-- Tweak: Collecting Spot: Removing "Gather Any Pebbles". Turning "Cobblestone" into Unobtanium -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/RecipeDef[defName="Make_FT_Pebbles"]</xpath>
+	</Operation>
+
+<!-- Balance: Collecting Spot: Pebble Product Ammounts / Each bill will now be able to afford a wall -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="Make_FT_PebblesSandstone"]/products/FT_CobbleSandstone</xpath>
+		<value>
+			<FT_CobbleSandstone>5</FT_CobbleSandstone>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="Make_FT_PebblesGranite"]/products/FT_CobbleGranite</xpath>
+		<value>
+			<FT_CobbleGranite>5</FT_CobbleGranite>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="Make_FT_PebblesSlate"]/products/FT_CobbleSlate</xpath>
+		<value>
+			<FT_CobbleSlate>5</FT_CobbleSlate>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="Make_FT_PebblesLimestone"]/products/FT_CobbleLimestone</xpath>
+		<value>
+			<FT_CobbleLimestone>5</FT_CobbleLimestone>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RecipeDef[defName="Make_FT_PebblesMarble"]/products/FT_CobbleMarble</xpath>
+		<value>
+			<FT_CobbleMarble>5</FT_CobbleMarble>
+		</value>
+	</Operation>
+
+<!-- Balance: Pebble balance, including work to build -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_cobbleStone"]/stuffProps/statFactors/WorkToBuild</xpath>
+		<value>
+			<WorkToBuild>1.0</WorkToBuild>
+		</value>
+	</Operation>
+
+<!-- Sandstone: Quick, Brittle. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSandstone"]/description</xpath>
+		<value>
+			<description>Small fragments of relatively soft, porous sandstone. Easily broken down and processed, but its brittle nature makes it less suitable for durable construction.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSandstone"]/stuffProps/statFactors/WorkToBuild</xpath>
+		<value>
+			<WorkToBuild>0.8</WorkToBuild>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSandstone"]/stuffProps/statFactors/MaxHitPoints</xpath>
+		<value>
+			<MaxHitPoints>0.4</MaxHitPoints>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSandstone"]/stuffProps/stuffAdjective</xpath>
+		<value>
+			<stuffAdjective>sandstone pebble</stuffAdjective>
+		</value>
+	</Operation>
+
+<!-- Granite: Harder, slower. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="FT_CobbleGranite"]/stuffProps/statFactors</xpath>
+		<value>
+			<WorkToBuild>2.5</WorkToBuild>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleGranite"]/description</xpath>
+		<value>
+			<description>Fragments of exceptionally hard granite. Difficult to crush and process, but prized for the strength and durability of the stone they produce.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleGranite"]/stuffProps/stuffAdjective</xpath>
+		<value>
+			<stuffAdjective>granite pebble</stuffAdjective>
+		</value>
+	</Operation>
+
+<!-- Limestone: Bit harder. Default work. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleLimestone"]/description</xpath>
+		<value>
+			<description>Fragments of sedimentary limestone. Relatively easy to process into building material, offering a dependable balance between durability and workability.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleLimestone"]/stuffProps/stuffAdjective</xpath>
+		<value>
+			<stuffAdjective>limestone pebble</stuffAdjective>
+		</value>
+	</Operation>
+
+<!-- Slate: Bit pretty. Default work. -->
+ 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSlate"]/label</xpath>
+		<value>
+			<label>slate shards</label>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSlate"]/description</xpath>
+		<value>
+			<description>Small fragments of fine-grained slate, often splitting into smooth, flat pieces. Its distinctive appearance makes it desirable for attractive construction.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleSlate"]/stuffProps/stuffAdjective</xpath>
+		<value>
+			<stuffAdjective>slate shard</stuffAdjective>
+		</value>
+	</Operation>
+
+<!-- Marble: Beautiful. Slow and Brittle.-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleMarble"]/stuffProps/statFactors/WorkToBuild</xpath>
+		<value>
+			<WorkToBuild>2</WorkToBuild>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleMarble"]/description</xpath>
+		<value>
+			<description>Fragments of beautiful stone, prized for its colour and natural patterns. Processing it takes time, and the resulting material is not as resilient as other building stones.</description>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="FT_CobbleMarble"]/stuffProps/stuffAdjective</xpath>
+		<value>
+			<stuffAdjective>marble pebble</stuffAdjective>
+		</value>
+	</Operation>
+
 </Patch>

@@ -14,8 +14,10 @@
 	<description>Compatibility patch for Fortifications - Medieval - Material and Progression: Production.
 
 Switches Stonecrushing from Medieval to Neolithic so that Stonecutting is no longer blocked.
+Furthermore makes changes to pebbles, making them more viable in general.
+Thus this mod can be used on its own also.
 
-It can be used on its own with just FM - Material if you're into that sort of thing!?
+Version 1.1
 	</description>
 
 	<loadAfter>
